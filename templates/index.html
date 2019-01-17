@@ -1,0 +1,7 @@
+<ul>
+  {% for name, url in records.items() %}
+    <li>
+      <a href="http://{{url}}">{{name}}</a>
+    </li>
+  {% endfor %}
+</ul>
