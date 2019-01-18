@@ -1,7 +1,16 @@
-<ul>
-  {% for name, url in records.items() %}
-    <li>
-      <a href="http://{{url}}">{{name}}</a>
-    </li>
-  {% endfor %}
-</ul>
+<!doctype>
+<html>
+  <head>
+    <title>Novell</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='typebase.css') }}" />
+  </head>
+  <body>
+    <ul>
+      {% for name, url in records.items() %}
+      <li>
+        <a href="http://{{url}}">{{name}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
