@@ -19,7 +19,7 @@ jobs:
                 inputs:
                     - name: novell-index
                 params:
-                    CF_KEY: ''
+                    CF_KEY: 'FAKEKEY'
                 run:
                     path: bash
                     args: 

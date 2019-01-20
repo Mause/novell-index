@@ -3,22 +3,38 @@ import tempfile
 
 import pytest
 from main import app
+import responses
 
 
 @pytest.fixture
 def client():
-    db_fd, app.app.config["DATABASE"] = tempfile.mkstemp()
-    app.app.config["TESTING"] = True
-    client = app.app.test_client()
-
-    with app.app.app_context():
-        app.init_db()
+    app.config["TESTING"] = True
+    client = app.test_client()
 
     yield client
 
-    os.close(db_fd)
-    os.unlink(app.app.config["DATABASE"])
 
-
+@responses.activate
 def test_simple(client):
+    url = "https://api.cloudflare.com/client/v4/zones"
+
+    responses.add(
+        "GET",
+        url,
+        json={"success": True, "result": [{"id": "QQQQ", "name": "mause.me"}]},
+    )
+    responses.add(
+        "GET",
+        url + "/QQQQ/dns_records",
+        json={"success": True, "result": [{"name": "concourse.novell.mause.me"}]},
+    )
+
     client.get("/")
+
+
+def main():
+    test_simple(client().__next__())
+
+
+if __name__ == "__main__":
+    main()

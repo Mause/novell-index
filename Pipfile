@@ -6,6 +6,9 @@ verify_ssl = true
 [dev-packages]
 ipdb = "*"
 pytest = "*"
+pdbpp = "*"
+pudb = "*"
+responses = "*"
 
 [packages]
 flask = "*"
