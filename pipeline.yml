@@ -1,0 +1,33 @@
+resources:
+    - name: novell-index
+      type: git
+      source: {uri: "https://github.com/Mause/novell-index"}
+
+jobs:
+    - name: unit
+      plan:
+          - get: novell-index
+            trigger: true
+          - task: test
+            config:
+                image_resource:
+                    type: docker-image
+                    source:
+                        repository: python
+                        version: 3.7.2-slim-stretch
+                platform: linux
+                inputs:
+                    - name: novell-index
+                params:
+                    CF_KEY: ''
+                run:
+                    path: bash
+                    args: 
+                        - -c
+                        - |
+                          cd novell-index
+                          ls
+                          pip install pipenv
+                          pipenv install --dev
+                          pipenv run py.test test.py -v
+
