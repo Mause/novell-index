@@ -1,17 +1,19 @@
-<!doctype>
+<!DOCTYPE >
 <html>
   <head>
     <title>Novell</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='typebase.css') }}" />
-    <meta name="viewport" content="width=device-width"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='typebase.css') }}"
+    />
+    <meta name="viewport" content="width=device-width" />
   </head>
   <body>
     <h2>Novell Services</h2>
     <ul>
       {% for name, url in records.items() %}
-      <li>
-        <a href="http://{{url}}">{{name}}</a>
-      </li>
+      <li><a href="http://{{url}}">{{name}}</a></li>
       {% endfor %}
     </ul>
   </body>
