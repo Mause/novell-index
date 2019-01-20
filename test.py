@@ -29,7 +29,9 @@ def test_simple(client):
         json={"success": True, "result": [{"name": "concourse.novell.mause.me"}]},
     )
 
-    client.get("/")
+    response = client.get("/")
+
+    assert response.status == '200 OK'
 
 
 def main():
