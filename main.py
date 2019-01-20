@@ -1,6 +1,8 @@
 import os
 from flask import Flask, render_template
 from CloudFlare import CloudFlare
+from dotenv import load_dotenv
+load_dotenv()
 
 PREFIX = '.novell.mause.me'
 
