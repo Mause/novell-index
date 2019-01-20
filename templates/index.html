@@ -8,13 +8,29 @@
       href="{{ url_for('static', filename='typebase.css') }}"
     />
     <meta name="viewport" content="width=device-width" />
+    <style>
+      body {
+        margin: 0 5%;
+      }
+      .colA {
+        width: 45%;
+        float: left;
+        margin-right: 5%;
+      }
+      .colB {
+        width: 45%;
+        float: left;
+      }
+    </style>
   </head>
   <body>
-    <h2>Novell Services</h2>
-    <ul>
-      {% for name, url in records.items() %}
-      <li><a href="http://{{url}}">{{name}}</a></li>
-      {% endfor %}
-    </ul>
+    <div class="colA">
+      <h2>Novell Services</h2>
+      <ul>
+        {% for name, url in records.items() %}
+        <li><a href="http://{{url}}">{{name}}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
   </body>
 </html>
