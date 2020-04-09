@@ -39,10 +39,10 @@
         },
         "cloudflare": {
             "hashes": [
-                "sha256:0f67bf20bfe112a15aabea55daaaa87eeaec41ce55d30e36e7257da71751a7ac"
+                "sha256:4463d5f2927338384169315f34c2a8ac0840075b59489f8d1d773b91caba6c39"
             ],
             "index": "pypi",
-            "version": "==2.6.3"
+            "version": "==2.6.5"
         },
         "flask": {
             "hashes": [
