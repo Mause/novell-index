@@ -47,10 +47,10 @@
         },
         "cloudflare": {
             "hashes": [
-                "sha256:25a91a61409df2959d5d145ae4dccd7aef79df0ebfd3c558378764e4031cab75"
+                "sha256:b04af62a0381cf0dc91e92a084e695251e12aa68cf820f681000564439990917"
             ],
             "index": "pypi",
-            "version": "==2.8.1"
+            "version": "==2.8.2"
         },
         "flask": {
             "hashes": [
@@ -59,12 +59,6 @@
             ],
             "index": "pypi",
             "version": "==1.1.2"
-        },
-        "future": {
-            "hashes": [
-                "sha256:b1bead90b70cf6ec3f0710ae53a525360fa360d306a86583adc6bf83a4db537d"
-            ],
-            "version": "==0.18.2"
         },
         "gunicorn": {
             "hashes": [
